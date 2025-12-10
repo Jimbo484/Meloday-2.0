@@ -1,16 +1,13 @@
 # Meloday-2.0
 Updated version of the great intelligent Plex playlist creator by trackstarter, featuring new options like ratings and playlist selector.
 
-HOW TO INSTALL: (I don't know how to post on GitHub so I will just send the MEGA file here.)
+HOW TO INSTALL:
 
 1. Install python. Here is the downloads page: https://www.python.org/downloads/ 
 
 Scroll down and find the relevant version. Install it, I know python can be scary for some, but not too much technical brain is required for this installation.
 
-2. Download my new version of Meloday here:
-https://mega.nz/file/q7IC3JgZ#TmFjvZXldJgh-KOWzLXDrDHWFzEtRazZaI_rLzWLd_I 
-
-Put this folder wherever you want. Now wherever you put the folder, while in file explorer right click near the top of the tab where it shows the location (Mine is in downloads, so it shows Downloads > Meloday) and copy address as text. Now open a cmd prompt (I press windows key + r to open run, then type cmd, but you can also just search command prompt in windows). In the command prompt window, type cd (the location you copied). So mine is cd C:\Users\my name\Downloads\Meloday (don't forget the cd at the start). Now type or copy the following:
+2. Download my new version of Meloday here on github. Put this folder wherever you want. Now wherever you put the folder, while in file explorer right click near the top of the tab where it shows the location (Mine is in downloads, so it shows Downloads > Meloday) and copy address as text. Now open a cmd prompt (I press windows key + r to open run, then type cmd, but you can also just search command prompt in windows). In the command prompt window, type cd (the location you copied). So mine is cd C:\Users\my name\Downloads\Meloday (don't forget the cd at the start). Now type or copy the following:
 
 pip install -r requirements.txt
 
