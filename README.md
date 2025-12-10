@@ -9,8 +9,11 @@ HOW TO INSTALL:
  
 3. In the folder, you will see a config.yml file. Edit it with notepad to configure the file. This is where you can customize your experience.
 On the top inside config.yml, you will need 3 things: Your plex url, your plex token, and the name of your music library. I know you might be thinking "damn, this is too much work..." But it isn't as hard as it may seem.
+
 -To get your plex url, right click your plex media server tray icon on the bottom right of your taskbar and click open plex. This should open an internet tab for Plex. What you need is in the search bar. It should say something like http://IPADDRESS:32400/web/index.html#!/. What you need is this: http://IPADDRESS:32400. Copy that and paste it in the "" url section of the config.yml file. 
+
 -To get the token, using the same method to get the url, log in to your plex account. Hit the music notes on the left side of the screen and click the first album that pops up on your screen. You want to see the tracks. On the right side of the tracks, there will be 3 vertical dots. Click Get Info near the bottom, and if you scroll down a bit on the page, you should see a view XML file. Click that, which will open up a white page with a bunch of blue and red letters and numbers. Now on that page, click and hold the search bar and drag it all the way to the right, and in there it will say Plex-Token=YOUR PLEX TOKEN (Should be a bunch of random numbers and letters. Copy that value and paste it into the Token section of the config.yml file. 
+
 -The last thing is the name of your music library. Mine is music, yours might be different. This isn't the desktop name, just the music library name as it appears on Plex.
 
 5. Edit whatever else you want in the config file. There reference tracks and sonically similar tracks. It doesn't use AI, it only uses sonic metadata, so I don't think this will work if you don't have premium. Reference tracks are ones that Meloday tries to find sonic similarity based on. Keep in mind there is a default artist_ratio of max tracks * .05 and a genre_ratio of max tracks * .1. This means the maximum number of same genres and same artists can only be that much in the playlist. I can add an option for the future to alter this. The flow of options goes like this:
