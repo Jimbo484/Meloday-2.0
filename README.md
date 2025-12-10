@@ -3,19 +3,12 @@ Updated version of the great intelligent Plex playlist creator by trackstarter, 
 
 HOW TO INSTALL:
 
-1. Install python. Here is the downloads page: https://www.python.org/downloads/ 
+1. Install python. Here is the downloads page: https://www.python.org/downloads/ Scroll down and find the relevant version. Install it, I know python can be scary for some, but not too much technical brain is required for this installation.
 
-Scroll down and find the relevant version. Install it, I know python can be scary for some, but not too much technical brain is required for this installation.
-
-2. Download my new version of Meloday here on github. Put this folder wherever you want. Now wherever you put the folder, while in file explorer right click near the top of the tab where it shows the location (Mine is in downloads, so it shows Downloads > Meloday) and copy address as text. Now open a cmd prompt (I press windows key + r to open run, then type cmd, but you can also just search command prompt in windows). In the command prompt window, type cd (the location you copied). So mine is cd C:\Users\my name\Downloads\Meloday (don't forget the cd at the start). Now type or copy the following:
-
-pip install -r requirements.txt
-
- in command prompt. This will install some necessities in order for this thing to work.
+2. Download my new version of Meloday here on github. Put this folder wherever you want. Now wherever you put the folder, while in file explorer right click near the top of the tab where it shows the location (Mine is in downloads, so it shows Downloads > Meloday) and copy address as text. Now open a cmd prompt (I press windows key + r to open run, then type cmd, but you can also just search command prompt in windows). In the command prompt window, type cd (the location you copied). So mine is cd C:\Users\my name\Downloads\Meloday (don't forget the cd at the start). Now type or copy the following: pip install -r requirements.txt in command prompt. This will install some necessities in order for this thing to work.
  
 3. In the folder, you will see a config.yml file. Edit it with notepad to configure the file. This is where you can customize your experience.
-
-4. On the top inside config.yml, you will need 3 things: Your plex url, your plex token, and the name of your music library. I know you might be thinking "damn, this is too much work..." But it isn't as hard as it may seem.
+On the top inside config.yml, you will need 3 things: Your plex url, your plex token, and the name of your music library. I know you might be thinking "damn, this is too much work..." But it isn't as hard as it may seem.
 -To get your plex url, right click your plex media server tray icon on the bottom right of your taskbar and click open plex. This should open an internet tab for Plex. What you need is in the search bar. It should say something like http://IPADDRESS:32400/web/index.html#!/. What you need is this: http://IPADDRESS:32400. Copy that and paste it in the "" url section of the config.yml file. 
 -To get the token, using the same method to get the url, log in to your plex account. Hit the music notes on the left side of the screen and click the first album that pops up on your screen. You want to see the tracks. On the right side of the tracks, there will be 3 vertical dots. Click Get Info near the bottom, and if you scroll down a bit on the page, you should see a view XML file. Click that, which will open up a white page with a bunch of blue and red letters and numbers. Now on that page, click and hold the search bar and drag it all the way to the right, and in there it will say Plex-Token=YOUR PLEX TOKEN (Should be a bunch of random numbers and letters. Copy that value and paste it into the Token section of the config.yml file. 
 -The last thing is the name of your music library. Mine is music, yours might be different. This isn't the desktop name, just the music library name as it appears on Plex.
