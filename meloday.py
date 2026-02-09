@@ -33,6 +33,7 @@ MIN_TRACK_RATING = MIN_RATINGS.get("track", 0)    # Default to 0 if not set
 MIN_ALBUM_RATING = MIN_RATINGS.get("album", 0)
 MIN_ARTIST_RATING = MIN_RATINGS.get("artist", 0)
 USE_TIME_PERIODS = config["playlist"].get("use_time_periods", 1)  # default to 1 if missing
+KEEP_PLAYLIST = config["playlist"].get("keep_playlist", 1)
 
 PERIOD_PHRASES = config["period_phrases"]
 def get_period_phrase(period):
@@ -45,6 +46,8 @@ FONTS_DIR = os.path.join(BASE_DIR, config["directories"]["fonts"])
 
 FONT_MAIN_PATH = os.path.join(FONTS_DIR, config["fonts"]["main"])
 FONT_MELODAY_PATH = os.path.join(FONTS_DIR, config["fonts"]["meloday"])
+
+
 
 time_periods = config["time_periods"]
 
@@ -480,13 +483,20 @@ def apply_text_to_cover(image_path, text):
     except Exception:
         return image_path
 
-def create_or_update_playlist(name, tracks, description, cover_file):
+def create_or_update_playlist(name, tracks, description, cover_file, period):
+    day_name = datetime.now().strftime("%A")
+
     try:
         existing_playlist = None
         for playlist in plex.playlists():
-            if playlist.title.startswith("Meloday for "):
-                existing_playlist = playlist
-                break
+            if KEEP_PLAYLIST:
+                if period in playlist.title and day_name in playlist.title:
+                    existing_playlist = playlist
+                    break
+            else:
+                if playlist.title.startswith("Meloday for "):
+                    existing_playlist = playlist
+                    break
 
         valid_tracks = [t for t in tracks if hasattr(t, "ratingKey")]
         if existing_playlist:
@@ -675,7 +685,7 @@ def main():
     # ---------------------------------------------------------
     print_status(90, "Creating/Updating playlist...")
     title, description = generate_playlist_title_and_description(period, final_ordered)
-    create_or_update_playlist(title, final_ordered, description, time_periods[period]['cover'])
+    create_or_update_playlist(title, final_ordered, description, time_periods[period]['cover'], period)
 
     print_status(100, "Playlist creation complete!")
 
