@@ -6,18 +6,19 @@ plex:
 
 playlist:
   exclude_played_days: 3                            # Ignore tracks played in the last X days to avoid repeats
-  history_lookback_days: 30                          # How many days of listening history to analyze for playlist generation
+  history_lookback_days: 30                         # How many days of listening history to analyze for playlist generation
   max_tracks: 50                                    # The maximum number of tracks allowed in a single playlist
-  sonic_similar_limit: 20                            # Number of sonically similar tracks to fetch for the pool for each reference track during sorting from most to least sonically similar.
+  sonic_similar_limit: 20                           # Number of sonically similar tracks to fetch for the pool for each reference track during sorting from most to least sonically similar.
   historical_ratio: 0.3                             # The max % of tracks sourced from listening history for each playlist
   sonic_similarity_limit: 50                        # Number of tracks to check for in pool from sonic_similar_limit (higher number means playlist will go from song to song in a smoother way, shouldn't be more than max tracks)
   sonic_similarity_distance: 0.2                    # Maximum similarity distance for sonic matching (lower = stricter matching)
   min_rating:                                       # Minimum user rating required to include music in playlist
-    track: 0                                     # Minimum rating for individual tracks (0-10)
-    album: 0                                     # Minimum rating for albums (0-10)
-    artist: 0                                    # Minimum rating for artists (0-10)
+    track: 0                                        # Minimum rating for individual tracks (0-10)
+    album: 0                                        # Minimum rating for albums (0-10)
+    artist: 0                                       # Minimum rating for artists (0-10)
   use_time_periods: 0                               # Enable/disable time period filtering for historical tracks (1 = on, 0 = off)
-  source_playlist: ""     # Name of playlist to source tracks from first ("" = disabled)
+  source_playlist: ""                               # Name of playlist to source tracks from first ("" = disabled)
+  keep_playlist: 0                                  #0 = Overwrite playlist everytime - 1 = Keeps all the playlist for one week
 
 
 
